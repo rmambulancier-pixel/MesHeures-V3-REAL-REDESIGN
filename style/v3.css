@@ -1,0 +1,102 @@
+
+/* =========================================================
+   MesHeures V3 — Real redesign layer
+   The original application logic remains untouched.
+   ========================================================= */
+:root{
+  --mh3-bg:#08111d;
+  --mh3-panel:#111d2b;
+  --mh3-panel2:#142536;
+  --mh3-line:rgba(169,196,219,.16);
+  --mh3-text:#edf5fb;
+  --mh3-muted:#90a4b6;
+  --mh3-blue:#36b9ff;
+  --mh3-green:#4fd18b;
+  --mh3-orange:#ffb84d;
+  --mh3-red:#ff6f7d;
+}
+*{box-sizing:border-box}
+html{background:var(--mh3-bg)}
+body{
+  background:
+    radial-gradient(900px 480px at 50% -160px,rgba(37,119,174,.22),transparent 68%),
+    linear-gradient(180deg,#0a1420 0%,#08111d 48%,#060d16 100%)!important;
+  color:var(--mh3-text)!important;
+  padding-bottom:92px;
+}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
+  background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
+  background-size:36px 36px;
+}
+.mh3-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,17,29,.88)!important;
+  backdrop-filter:blur(20px) saturate(145%);
+  border-bottom:1px solid var(--mh3-line);
+}
+.mh3-brandbar{
+  max-width:980px;margin:auto;padding:13px 18px 11px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.mh3-brand{border:0!important;background:transparent!important;padding:0!important;color:var(--mh3-text)!important;display:flex;align-items:center;gap:10px;text-align:left}
+.mh3-logo{width:40px;height:40px;display:grid;place-items:center;border-radius:14px;background:linear-gradient(145deg,#153852,#0d1e2e);font-size:21px;border:1px solid rgba(99,196,255,.22)}
+.mh3-brand b{display:block;font-size:22px;line-height:1.05;letter-spacing:-.5px}
+.mh3-brand small{display:block;color:var(--mh3-muted);font-size:10px;margin-top:3px;letter-spacing:.8px;text-transform:uppercase}
+.mh3-head-actions{display:flex;gap:8px}
+.mh3-iconbtn{width:40px;height:40px;border-radius:13px!important;padding:0!important;background:#101e2c!important;border:1px solid var(--mh3-line)!important}
+.mh3-tabs{max-width:980px;margin:auto;padding:0 12px 9px;display:flex;gap:7px;overflow:auto}
+.mh3-tabs button{
+  white-space:nowrap;background:#0e1b28!important;border:1px solid var(--mh3-line)!important;
+  color:#aab9c7!important;border-radius:12px!important;padding:9px 14px!important;
+}
+.mh3-tabs button.on{background:linear-gradient(180deg,#1b8bcb,#146d9f)!important;color:#fff!important;border-color:#42c5ff!important;box-shadow:0 8px 24px rgba(25,147,210,.2)}
+main{position:relative;max-width:980px!important;padding:18px 16px 24px!important;margin:auto!important}
+#s-home{display:none}#s-home.on{display:block}
+section{animation:mh3In .22s ease}
+@keyframes mh3In{from{opacity:.35;transform:translateY(6px)}to{opacity:1;transform:none}}
+.mh3-welcome{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;padding:6px 2px 18px}
+.mh3-eyebrow{font-size:10px;letter-spacing:1.5px;color:var(--mh3-blue);font-weight:800}
+.mh3-welcome h2{font-size:29px;margin:6px 0 3px;color:#fff}
+.mh3-welcome p{margin:0;color:var(--mh3-muted);font-size:13px}
+.mh3-today-btn{border-radius:14px!important;padding:11px 13px!important;background:#0f2232!important;border:1px solid var(--mh3-line)!important;color:#d9effc!important;white-space:nowrap}
+.mh3-today-btn b{color:var(--mh3-blue);font-size:17px;margin-left:5px}
+.mh3-primary-card{
+  border:1px solid rgba(80,186,245,.26);border-radius:24px;padding:20px;
+  background:linear-gradient(135deg,rgba(25,74,104,.95),rgba(14,29,43,.96) 60%,rgba(10,22,33,.96));
+  box-shadow:0 20px 50px rgba(0,0,0,.18);margin-bottom:24px;
+}
+.mh3-primary-top{display:flex;justify-content:space-between;gap:16px;align-items:center}
+.mh3-overline{font-size:10px;letter-spacing:1.2px;color:#86cdf2;font-weight:800}
+.mh3-primary-card h3{font-size:23px;margin:6px 0 4px;color:#fff}
+.mh3-primary-card p{margin:0;color:#a9c0d0;font-size:13px;max-width:520px}
+.mh3-ring{min-width:80px;height:80px;border-radius:50%;display:grid;place-content:center;text-align:center;background:radial-gradient(circle,#142d3d 58%,transparent 60%),conic-gradient(var(--mh3-blue) 0 72%,#263746 72% 100%);box-shadow:inset 0 0 0 7px #102131}
+.mh3-ring strong{font-size:19px}.mh3-ring small{font-size:9px;color:var(--mh3-muted);text-transform:uppercase}
+.mh3-primary-actions{display:flex;gap:9px;margin-top:18px}.mh3-primary-actions button{flex:1;border-radius:14px!important;padding:13px!important;background:linear-gradient(180deg,#1d9cdf,#137eb7)!important;color:#fff!important;border:0!important}.mh3-primary-actions .ghost{background:#112434!important;border:1px solid var(--mh3-line)!important;color:#d5e5ef!important}
+.mh3-section-title{display:flex;justify-content:space-between;align-items:center;margin:20px 2px 10px;font-size:16px;font-weight:800}.mh3-section-title button{padding:0!important;border:0!important;background:transparent!important;color:var(--mh3-blue)!important;font-size:11px}
+.mh3-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mh3-metric{text-align:left!important;padding:15px!important;min-height:124px;border-radius:18px!important;background:linear-gradient(160deg,#111f2e,#0d1824)!important;border:1px solid var(--mh3-line)!important}
+.mh3-metric .ico{display:block;color:var(--mh3-blue);font-size:20px;margin-bottom:7px}.mh3-metric small{display:block;color:#7890a3;font-size:9px;font-weight:800;letter-spacing:.9px}.mh3-metric strong{display:block;color:#f4f9fc;font-size:22px;margin:4px 0}.mh3-metric em{font-style:normal;color:#8298aa;font-size:10px}
+.mh3-alert-panel{border:1px solid var(--mh3-line);border-radius:18px;padding:8px;background:#0d1925}
+.mh3-alert-row{display:flex;align-items:center;gap:12px;padding:11px 8px;border-bottom:1px solid rgba(255,255,255,.06)}.mh3-alert-row:last-child{border-bottom:0}.mh3-alert-dot{width:9px;height:9px;border-radius:50%;background:var(--mh3-green);box-shadow:0 0 16px rgba(79,209,139,.6)}.mh3-alert-dot.warn{background:var(--mh3-orange);box-shadow:0 0 16px rgba(255,184,77,.5)}.mh3-alert-dot.bad{background:var(--mh3-red);box-shadow:0 0 16px rgba(255,111,125,.5)}.mh3-alert-row b{font-size:12px;display:block}.mh3-alert-row small{font-size:11px;color:var(--mh3-muted)}
+.mh3-shortcuts{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}.mh3-shortcuts button{min-height:100px;text-align:left!important;border-radius:16px!important;background:#101c29!important;border:1px solid var(--mh3-line)!important;padding:12px!important}.mh3-shortcuts span{display:block;font-size:20px;margin-bottom:8px}.mh3-shortcuts b{display:block;color:#eaf3f9;font-size:11px}.mh3-shortcuts small{display:block;color:var(--mh3-muted);font-size:10px;margin-top:3px}
+.mh3-recent{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.mh3-recent button{min-height:74px;padding:8px!important;border-radius:14px!important;background:#0f1b28!important;border:1px solid var(--mh3-line)!important;text-align:center}.mh3-recent small{display:block;color:var(--mh3-muted);font-size:9px}.mh3-recent b{display:block;font-size:14px;margin:4px 0}.mh3-recent em{font-style:normal;font-size:9px;color:var(--mh3-blue)}
+.mh3-day-hero{border:1px solid var(--mh3-line);border-radius:22px;padding:16px 18px;margin-bottom:13px;background:linear-gradient(135deg,#112b3d,#0e1926);display:flex;justify-content:space-between;align-items:center}.mh3-day-hero .left small{color:#82a1b4;font-size:10px;text-transform:uppercase;letter-spacing:1px}.mh3-day-hero .left b{display:block;font-size:20px;margin-top:4px}.mh3-day-hero .right{text-align:right}.mh3-day-hero .right strong{display:block;font-size:25px;color:#66d0ff}.mh3-day-hero .right small{color:#8fa5b6}
+.card{background:linear-gradient(145deg,rgba(18,29,42,.97),rgba(14,24,35,.97))!important;border:1px solid var(--mh3-line)!important;border-radius:20px!important;box-shadow:0 16px 35px rgba(0,0,0,.12)!important}
+.card h2{color:#dcebf5!important;font-size:17px!important}
+.nav{background:transparent!important}
+.fab{background:rgba(8,17,29,.88)!important;backdrop-filter:blur(16px);border-top:1px solid var(--mh3-line)!important}
+.fab button{border-radius:14px!important}
+.mh3-bottomnav{display:none;position:fixed;z-index:120;bottom:10px;left:50%;transform:translateX(-50%);width:calc(100% - 20px);max-width:620px;padding:6px;background:rgba(13,25,37,.94);backdrop-filter:blur(20px);border:1px solid var(--mh3-line);border-radius:20px;grid-template-columns:repeat(5,1fr);box-shadow:0 14px 45px rgba(0,0,0,.38)}
+.mh3-bottomnav button{border:0!important;background:transparent!important;color:#7f94a5!important;padding:8px 2px!important}.mh3-bottomnav button.on{color:#fff!important;background:#17364b!important;border-radius:14px}.mh3-bottomnav span{display:block;font-size:18px}.mh3-bottomnav small{display:block;font-size:9px;margin-top:3px}
+@media(max-width:760px){
+  .mh3-tabs{display:none}.mh3-bottomnav{display:grid}
+  .mh3-brandbar{padding:12px 16px}.mh3-welcome{padding-top:2px}
+  main{padding:14px 14px 98px!important}
+  .mh3-metrics{grid-template-columns:1fr 1fr}.mh3-metric:last-child{grid-column:1/-1;min-height:102px}
+  .mh3-shortcuts{grid-template-columns:repeat(3,1fr)}.mh3-shortcuts button{min-height:88px}
+  .mh3-recent{grid-template-columns:repeat(4,1fr)}
+  .mh3-primary-card{padding:16px;border-radius:21px}.mh3-primary-card h3{font-size:20px}.mh3-ring{min-width:70px;height:70px}.mh3-primary-actions{flex-direction:column}
+  #s-jour .nav{margin-top:2px}
+}
+@media(min-width:761px){.mh3-bottomnav{display:none}}

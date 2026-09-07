@@ -1,0 +1,15 @@
+{
+  "name": "MesHeures V3",
+  "short_name": "MesHeures",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#08111d",
+  "theme_color": "#08111d",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
